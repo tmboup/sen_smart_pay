@@ -1,0 +1,5 @@
+.bg-image {
+    background-image: url("../images/sensmartpay.png"); /* Chemin de votre image */
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir l'élément body */
+    background-repeat: no-repeat; /* Évite la répétition de l'image de fond */
+}

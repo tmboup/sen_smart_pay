@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dépôt</title>
+
+    <!-- Inclure les fichiers CSS Bootstrap (assurez-vous d'avoir les liens corrects vers les fichiers CSS) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- Barre de Menu Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">SenSmartPay</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cardRfids">Carte Rfid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">Utilisateur</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/transactions">Transaction</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h2 class="h2">Dépôt sur la Carte RFID</h2>
+    <form method="POST" th:action="@{'/depot/' + ${cardRfidToDepot.idCardRfid}}">
+
+        <div class="form-group">
+            <label for="uid">UID</label>
+            <input type="text" class="form-control" id="uid" name="uid1" placeholder="UID" th:value="${cardRfidToDepot.uid}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label for="issueDate">Date de création</label>
+            <input type="date" class="form-control" id="issueDate" name="issueDate" th:value="${cardRfidToDepot.issueDate}" disabled required>
+        </div>
+
+        <div class="form-group">
+            <label for="expirationDate">Date d'expiration</label>
+            <input type="date" class="form-control" id="expirationDate" name="expirationDate" th:value="${cardRfidToDepot.expirationDate}" disabled required>
+        </div>
+
+        <div class="form-group">
+            <label for="lieu">Lieu du dépôt </label>
+            <input type="text" class="form-control" id="lieu" name="lieu" placeholder="lieu">
+        </div>
+
+        <div class="form-group">
+            <label for="depot">Montant dépôt </label>
+            <input type="number" class="form-control" id="depot" name="depot" placeholder="depot">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Effectuer le dépôt</button>
+        <button type="reset" class="btn btn-danger" onclick="window.location.href='/cardRfids'">Annuler</button>
+    </form>
+</div>
+
+<!-- Inclure le fichier JavaScript Bootstrap (assurez-vous d'avoir le lien correct vers le fichier JavaScript) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

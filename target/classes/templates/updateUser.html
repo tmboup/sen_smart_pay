@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier la Carte RFID</title>
+
+    <!-- Inclure les fichiers CSS Bootstrap (assurez-vous d'avoir les liens corrects vers les fichiers CSS) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<!-- Barre de Menu Bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">SenSmartPay</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cardRfids">Carte Rfid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users">Utilisateur</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/transactions">Transaction</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <h2 class="h2">Modification de l'utilisateur </h2>
+    <form method="POST" th:action="@{'/updateUser/' + ${userToUpdate.idPersonne}}">
+
+        <div class="form-group">
+            <label for="prenom">Prenom</label>
+            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="prenom" th:value="${userToUpdate.prenom}">
+        </div>
+
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="nom" th:value="${userToUpdate.nom}">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="email" th:value="${userToUpdate.email}">
+        </div>
+
+        <div class="form-group">
+            <label for="sexe">Sexe</label>
+            <input type="text" class="form-control" id="sexe" name="sexe" placeholder="Sexe" th:value="${userToUpdate.sexe}">
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="number" class="form-control" id="telephone" name="telephone" th:value="${userToUpdate.telephone}">
+        </div>
+
+        <div class="form-group">
+            <label for="dateNaissance">Date de naissance</label>
+            <input type="date" class="form-control" id="dateNaissance" name="dateNaissance" th:value="${userToUpdate.dateNaissance}">
+        </div>
+
+        <div class="form-group">
+            <label for="lieuNaissance">Lieu de naissance</label>
+            <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance" th:value="${userToUpdate.lieuNaissance}">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <button type="reset" class="btn btn-danger" onclick="window.location.href='/users'">Annuler</button>
+
+    </form>
+</div>
+
+<!-- Inclure le fichier JavaScript Bootstrap (assurez-vous d'avoir le lien correct vers le fichier JavaScript) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

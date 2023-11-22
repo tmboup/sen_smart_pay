@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styleLogin.css">
+    <script src="/scripts/scriptLogin.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+<div class="container login_page">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="login_form">
+                <h5>Login</h5>
+                <form th:action="@{/login}" method="post">
+                    <div class="login_email_input">
+                        <label for="username" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="username" id="username" placeholder="Email">
+                    </div>
+                    <div class="login_password_input">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="password" id="password" placeholder="Mot de passe">
+                    </div>
+                    <div class="forget_password">
+                        <input type="checkbox" id="showPasswordCheckbox" onchange="togglePasswordVisibility()"> Show Password
+                        <span><a href="#">Forget Password</a></span>
+                    </div>
+                    <div class="login_button">
+                        <button class="btn login_button" type="submit">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+</html>
+
+
+
+
+

@@ -1,0 +1,23 @@
+###Pour deposer son code sur gitHub, nous devons suivre les etapes suivantes :
+1) git init : pour unitialiser le git 
+2)git add *  : pour ajouter les fichiers sur l'historique
+3) git commit -m "explication " : pour l'explication du commit
+4) git remote add origine <lien sur le github>
+5)git push -u origin master
+6) Lors que l'on clique sur git push, on entre d'abord notre nom ou email puis le token generer au niveau du setting general.
+
+Cependant il faut pas de se placer sur le dossier parent contenant les fichiers du projet mais pas le dossier general.
+
+
+
+Voici le token generer pour l'instant : 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
+
+####################################################################
+echo "# upload_video" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/tmboup/upload_video.git
+git push -u origin main
+################################################################s
